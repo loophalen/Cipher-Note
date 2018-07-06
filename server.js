@@ -8,12 +8,21 @@ const mongoose = require('mongoose');
 //HEROKU PORT
 const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app_dev';
 
+//MIDDLEWARE
+app.use(express.urlencoded({extended:true}));
+
 // ROUTES
 
-//CREATE ROUTE
+//CREATE NEW ROUTE
 app.get('/coin/new', (req, res)=>{
     res.render('new.ejs'); 
 }); 
+
+//CREATE ROUTE
+app.post('/coin', (req, res)=>{
+    res.send(req.body);
+});
+
 
 // LISTENER
 app.listen(PORT, ()=>{
