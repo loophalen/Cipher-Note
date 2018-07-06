@@ -25,8 +25,15 @@ app.post('/coin', (req, res)=>{
     } else {
         req.body.hodlCoin = false; 
     }
-    res.send(req.body);
+    Coin.create(req.body, (err, createdCoin)=>{
+        res.send(createdCoin); 
+    }); 
 });
+
+//INDEX ROUTE
+app.get('/coin', (req, res)=>{
+    res.render('index.ejs'); 
+}); 
 
 
 // LISTENER
