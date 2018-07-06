@@ -28,8 +28,7 @@ app.post('/coin', (req, res)=>{
         req.body.hodlCoin = false; 
     }
     Coin.create(req.body, (err, createdCoin)=>{
-        if (err) console.log(err.message)
-        res.send(createdCoin); 
+        res.redirect('/coin'); 
     }); 
 });
 

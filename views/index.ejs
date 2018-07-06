@@ -8,15 +8,19 @@
         <h1>Coin Index</h1>
         
         <% for(let i = 0; i < coin.length; i++){ %>
-            <li>
-                <%=coin[i].coin; %></a>
-                <%=coin[i].ticker; %>
-                <%=coin[i].info; %>
-
             
-            </li>
+            
+                Coin: <%=coin[i].coin; %>
+                <br>
+                Ticker: <%=coin[i].ticker; %>
+                <br>
+                Info: <%=coin[i].info; %>
+                <br>
+                Trade: <%=coin[i].exchange; %>
+            
 
             <% } %>
+            
         <nav>
             <a href="/coin/new">Add a New Coin</a>
         </nav>
