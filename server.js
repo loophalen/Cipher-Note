@@ -41,6 +41,15 @@ app.get('/coin', (req, res)=>{
     }); 
 }); 
 
+//SHOW ROUTE
+app.get('/coin/:id', (req, res)=>{
+    Coin.findById(req.params.id, (err, foundCoin)=>{
+        res.render('show.ejs', {
+            coin:Coin
+        });
+    });
+});
+
 
 // LISTENER
 app.listen(PORT, ()=>{

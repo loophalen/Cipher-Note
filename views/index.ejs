@@ -10,13 +10,13 @@
         <% for(let i = 0; i < coin.length; i++){ %>
             
             
-                Coin: <%=coin[i].coin; %>
+                <a href="/coin/<%=coin[i].id; %>"><%=coin[i].coin; %></a>
                 <br>
-                Ticker: <%=coin[i].ticker; %>
+                <!-- Ticker: <%=coin[i].ticker; %>
                 <br>
                 Info: <%=coin[i].info; %>
                 <br>
-                Trade: <%=coin[i].exchange; %>
+                Trade: <%=coin[i].exchange; %> -->
             
 
             <% } %>
