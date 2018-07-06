@@ -20,6 +20,11 @@ app.get('/coin/new', (req, res)=>{
 
 //CREATE ROUTE
 app.post('/coin', (req, res)=>{
+    if(req.body.hodlCoin === 'on'){
+        req.body.hodlCoin = true; 
+    } else {
+        req.body.hodlCoin = false; 
+    }
     res.send(req.body);
 });
 
