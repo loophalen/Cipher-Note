@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
 const coinSchema = new mongoose.Schema({
-    coin:  { type: String, required: true },
-    ticker:  { type: String, required: true },
-    info: { type: String, required: true }, 
+    coin: String, 
+    ticker: String, 
+    info: String, 
+    exchange: String,   
     hodlCoin: Boolean
 });
 

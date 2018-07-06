@@ -5,8 +5,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 // MONGOOSE DATABASE
 const mongoose = require('mongoose'); 
+//REQUIRE MODELS
+const Coin = require('./models/coins.js'); 
 //HEROKU PORT
-const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app_dev';
+const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/coin_app_dev';
 
 //MIDDLEWARE
 app.use(express.urlencoded({extended:true}));
@@ -26,13 +28,18 @@ app.post('/coin', (req, res)=>{
         req.body.hodlCoin = false; 
     }
     Coin.create(req.body, (err, createdCoin)=>{
+        if (err) console.log(err.message)
         res.send(createdCoin); 
     }); 
 });
 
 //INDEX ROUTE
 app.get('/coin', (req, res)=>{
-    res.render('index.ejs'); 
+    Coin.find({}, (err, allCoin)=>{
+        res.render('index.ejs', {
+            coin: allCoin
+        }); 
+    }); 
 }); 
 
 
