@@ -75,11 +75,11 @@ app.get('/coin/new', (req, res)=>{
 
 //CREATE ROUTE
 app.post('/coin', (req, res)=>{
-    if(req.body.hodlCoin === 'on'){
-        req.body.hodlCoin = true; 
-    } else {
-        req.body.hodlCoin = false; 
-    }
+    // if(req.body.hodlCoin === 'on'){
+    //     req.body.hodlCoin = true; 
+    // } else {
+    //     req.body.hodlCoin = false; 
+    // }
     Coin.create(req.body, (err, createdCoin)=>{
         res.redirect('/coin'); 
     }); 
@@ -123,6 +123,18 @@ app.get('/coin/:id', (req, res)=>{
 app.delete('/coin/:id', (req, res)=>{
     Coin.findByIdAndRemove(req.params.id, (err, data)=>{
         res.redirect('/coin'); 
+    }); 
+}); 
+
+//EDIT ROUTE
+app.get('/coin/:id/edit', (req, res)=>{
+    Coin.findById(req.params.id, (err, foundCoin)=>{
+        res.render(
+            'edit.ejs', 
+            {
+                coin:foundCoin
+            }
+        );
     }); 
 }); 
 

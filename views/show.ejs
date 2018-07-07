@@ -9,7 +9,10 @@
 
         <%=coin.coin; %>
 
-         <!--  DELETE FORM -->
+        <!-- EDIT -->
+        <a href="/coin/<%= coin.id; %>/edit">Edit</a>
+
+         <!--  DELETE  -->
 			<form action="/coin/<%= coin.id; %>?_method=DELETE" method="POST" >
                 <input type="submit" value="DELETE"/>
         </form>
