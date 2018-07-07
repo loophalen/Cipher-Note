@@ -9,7 +9,7 @@
 
         <%=coin.coin; %>
 
-        <form action="/coin" method="POST">
+        <form action="/coin/<%=coin.id%>?_method=PUT" method="POST">
             <!-- Coin: <input type="text" name="coin" /><br/>
             Symbol: <input type="text" name="Symbol" /><br/> -->
             Info: <input type="text" name="info" /><br/>

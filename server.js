@@ -138,6 +138,13 @@ app.get('/coin/:id/edit', (req, res)=>{
     }); 
 }); 
 
+//UPDATE ROUTE - PUT
+app.put('/coin/:id', (req, res)=> {
+    Coin.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, data)=>{
+        res.redirect('/coin'); 
+    }); 
+})
+
 
 
 
