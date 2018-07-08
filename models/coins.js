@@ -5,7 +5,8 @@ const coinSchema = new mongoose.Schema({
     ticker: String, 
     info: String, 
     exchange: String,   
-    hodlCoin: Boolean
+    MEME: String, 
+    Message: String, 
 });
 
 const Coin = mongoose.model('Coin', coinSchema);
