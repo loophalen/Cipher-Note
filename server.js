@@ -7,9 +7,9 @@ const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose'); 
 //REQUIRE MODELS
 const Coin = require('./models/coins.js'); 
+const coinSeed = require('./models/seed.js')
 //HEROKU PORT
 const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/coin_app_dev';
-
 //METHOD-OVERRIDE
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
@@ -39,7 +39,7 @@ app.get('/coin/seed', (req, res)=>{
             "symbol": "XRP"
         }, 
         {
-            "coin": "Bitcoin Cash",  
+            "coin": "Bitcoin Cash", 
             "symbol": "BCH" 
         },
         {
@@ -66,7 +66,13 @@ app.get('/coin/seed', (req, res)=>{
     ], (err, data)=>{
         res.redirect('/coin');
     })
-}); 
+});
+
+//SEED 
+// Coin.create( coinSeed, (err, data) => {
+//     if (err) console.log (err.message)
+//     console.log('added coin seed data')
+// }); 
 
 //CREATE NEW ROUTE
 app.get('/coin/new', (req, res)=>{
