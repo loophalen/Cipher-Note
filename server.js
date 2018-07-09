@@ -41,7 +41,7 @@ app.get('/coin', (req, res)=>{
 }); 
 
 //Create Custom Message for Logged In Users on Index Page
-app.get('/', (req, res)=>{
+app.get('/coin', (req, res)=>{
     console.log(req.session)
     res.render('index.ejs', {
         coin: [], 

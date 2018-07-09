@@ -12,16 +12,16 @@ router.get('/new', (req, res) => {
 //SESSION DELETE ROUTE
 router.delete('/', (req, res) => {
     req.session.destroy(()=>{
-        res.redirect('/');
+        res.redirect('/coin');
     });
 })
 
 //CREATE SESSION CREATE ROUTE
 router.post('/', (req, res) => {
     User.findOne({ username: req.body.username }, (err, foundUser)=>{
-        if(req.body.password == foundUser.password){
+        if(bcrypt.compareSync(req.body.password, foundUser.password)){
             req.session.currentUser = foundUser;
-            res.redirect('/');
+            res.redirect('/coin');
         } else {
             res.send('wrong password');
         }
