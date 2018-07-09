@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <!-- LOGIN WELCOME -->
-        <h1>
-
-            <% if(currentUser) { %>
-                Welcome <%=currentUser.username%>!
-            <% } else { %>
-                Welcome!
-            <% } %>
-
-        </h1>
-         
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <!-- LOGIN WELCOME -->
+      <div class ="container">
+      <h1>
+         <% if(currentUser) { %>
+         Welcome to Cipher Note <%=currentUser.username%>!
+         <% } else { %>
+         Cipher Note
+         <% } %>
+      </h1>
+      
+      <div class="coin-index">
+        <h2>Coin Index</h2>
         <% for(let i = 0; i < coin.length; i++){ %>
-            
-            
-                <a href="/coin/<%=coin[i].id; %>"><%=coin[i].coin; %></a>
-                <br>
+        <a href="/coin/<%=coin[i].id; %>"><%=coin[i].coin; %></a>
+        <br>
+        <% } %>
+    </div>
 
-            
+    <br>
 
-            <% } %>
-            
-        <nav>
-            <a href="/coin/new">Add a New Coin</a>
-            <li><a href="/sessions/new">Log In</a></li>
-            <li><a href="/users/new">Register</a></li>
-        </nav>
-
-<!-- LOGOUT -->
- 
-<% if(currentUser) { %>
-    <li>
-        <form action="/sessions?_method=DELETE" method="POST">
+    <div class="nav">
+      <nav>
+         <li><a href="/coin/new">Add a New Coin</a></li> 
+         <li><a href="/sessions/new">Log In</a></li>
+         <li><a href="/users/new">Register</a></li>
+      </nav>
+    </div>
+      <!-- LOGOUT -->
+    <div class="logout">
+      <% if(currentUser) { %>
+      <li>
+         <form action="/sessions?_method=DELETE" method="POST">
             <input type="submit" value="Logout"/>
-        </form>
-    </li>
-<% } %>
+         </form>
+      </li>
+      <% } %>
+        </div>
 
-<% if(currentUser) { %>
-    <main>
-            <a href="/app">CipherNote</a>
-    </main>
-<% } %>
-        
-    </body>
+    </div>
+
+   </body>
 </html>
