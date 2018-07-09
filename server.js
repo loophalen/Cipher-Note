@@ -24,11 +24,17 @@ app.get('/coin/seed', (req, res)=>{
     Coin.create([
         {
             "coin": "Bitcoin",  
-            "symbol": "BTC"  
+            "symbol": "BTC", 
+            "info": "Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Although other cryptocurrencies have come before, Bitcoin is the first decentralized cryptocurrency - Its reputation has spawned copies and evolution in the space.", 
+            "exchange": "https://www.coinbase.com/",
+            "notes": " ",
         },
         {
             "coin": "Ethereum", 
-            "symbol": "ETH" 
+            "symbol": "ETH", 
+            "info": " ", 
+            "exchange": " ",
+            "notes": " " 
         },
         {
             "coin": "Litecoin",
@@ -136,7 +142,7 @@ app.delete('/coin/:id', (req, res)=>{
 app.get('/coin/:id/edit', (req, res)=>{
     Coin.findById(req.params.id, (err, foundCoin)=>{
         res.render(
-            'edit.ejs', 
+            'edit.ejs',
             {
                 coin:foundCoin
             }

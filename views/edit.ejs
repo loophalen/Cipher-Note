@@ -10,15 +10,18 @@
         <%=coin.coin; %>
 
         <form action="/coin/<%=coin.id%>?_method=PUT" method="POST">
-            <!-- Coin: <input type="text" name="coin" /><br/>
-            Symbol: <input type="text" name="Symbol" /><br/> -->
-            Info: <input type="text" name="info" /><br/>
-            Exchange: <input type="text" name="exchange" /><br/>
-            Meme: <input type="text" name="img" /><br/> 
-            Message: <input type="text" name="message" /><br/>
+            Coin: <input type="text" name="coin" value="<%=coin.coin%>" /><br/>
+            Symbol: <input type="text" name="symbol" value="<%=coin.symbol%>" /><br/>
+            Info: <input type="text" name="info" value="<%=coin.info%>" /><br/>
+            Exchange: <input type="text" name="exchange" value="<%=coin.exchange%>" /><br/>
+            Notes: <input type="text" name="notes" value="<%=coin.notes%>" /><br/>
             <input type="submit" name="" value="Edit Item"/>
         </form>
       
+        <nav>
+                <a href="/coin">Back to Coin Index</a>
+    
+            </nav>
         
     </body>
 </html>

@@ -6,9 +6,18 @@
     </head>
     <body>
         <h1>Coin Info</h1>
+
+
+        <%= coin.coin %>
+        <%= coin.symbol %>
+        Info: <%= coin.info %>
+        Exchange: <%= coin.exchange %>
+        Notes: <%= coin.notes %>
+
+        <br>
+       
         
-        <%=coin.coin; %>
-        <%=coin.info; %>
+        
 
         <!-- EDIT -->
         <a href="/coin/<%= coin.id; %>/edit">Edit</a>
