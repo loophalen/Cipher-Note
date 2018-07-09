@@ -99,11 +99,6 @@ router.get('/new', (req, res)=>{
 
 //CREATE ROUTE
 router.post('/', (req, res)=>{
-    if(req.body.hodlCoin === 'on'){
-        req.body.hodlCoin = true; 
-    } else {
-        req.body.hodlCoin = false; 
-    }
     Coin.create(req.body, (err, createdCoin)=>{
         res.redirect('/coin'); 
     }); 

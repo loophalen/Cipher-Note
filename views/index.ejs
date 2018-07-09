@@ -7,6 +7,7 @@
     <body>
         <!-- LOGIN WELCOME -->
         <h1>
+
             <% if(currentUser) { %>
                 Welcome <%=currentUser.username%>!
             <% } else { %>
@@ -27,10 +28,12 @@
             
         <nav>
             <a href="/coin/new">Add a New Coin</a>
+            <li><a href="/sessions/new">Log In</a></li>
+            <li><a href="/users/new">Register</a></li>
         </nav>
 
 <!-- LOGOUT -->
-
+ 
 <% if(currentUser) { %>
     <li>
         <form action="/sessions?_method=DELETE" method="POST">
@@ -38,9 +41,12 @@
         </form>
     </li>
 <% } %>
-        
-       
 
+<% if(currentUser) { %>
+    <main>
+            <a href="/app">CipherNote</a>
+    </main>
+<% } %>
         
     </body>
 </html>

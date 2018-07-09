@@ -35,9 +35,28 @@ app.use('/coin', coinController);
 //LOGIN 
 app.get('/coin', (req, res)=>{
     res.render('index.ejs', {
+        coin: [], 
         currentUser: req.session.currentUser || {username: 'xxxxxx'}
     }); 
 }); 
+
+//Create Custom Message for Logged In Users on Index Page
+app.get('/', (req, res)=>{
+    console.log(req.session)
+    res.render('index.ejs', {
+        coin: [], 
+        currentUser: req.session.currentUser
+    });
+});
+
+// Disallow Users Not Logged In From Special Page
+app.get('/coin', (req, res)=>{
+    if(req.session.currentuser){
+        res.send('create coin');
+    } else {
+        res.redirect('/sessions/new');
+    }
+});
 
 
 // LISTENER
