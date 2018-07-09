@@ -5,20 +5,21 @@
         <title></title>
     </head>
     <body>
-        <h1>Coin Info</h1>
 
+        <div class="container">
+            <h1>Coin Info</h1>
+            <div class = "main-content">
+                
+                <h2><%= coin.coin %></h2>
+                <h3><%= coin.symbol %></h3>
+                <p>Info: <%= coin.info %></p>
+                Exchange: <%= coin.exchange %>
+                <p>Notes: <%= coin.notes %></p>
 
-        <%= coin.coin %>
-        <%= coin.symbol %>
-        Info: <%= coin.info %>
-        Exchange: <%= coin.exchange %>
-        Notes: <%= coin.notes %>
-
-        <br>
-       
+            </div>
         
-        
-
+        </div>
+    
         <!-- EDIT -->
         <a href="/coin/<%= coin.id; %>/edit">Edit</a>
 
@@ -27,11 +28,6 @@
                 <input type="submit" value="DELETE"/>
         </form>
 
-
-
-       
-
-       
         <nav>
             <a href="/coin">Back to Coin Index</a>
 

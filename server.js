@@ -1,6 +1,7 @@
 //EXPRESS
 const express = require('express'); 
 const app = express(); 
+const session = require('express-session');
 //RETURN HEROKU OR LOCAL 3000
 const PORT = process.env.PORT || 3000;
 // MONGOOSE DATABASE
@@ -16,6 +17,19 @@ app.use(methodOverride('_method'));
 
 //MIDDLEWARE
 app.use(express.urlencoded({extended:true}));
+//EXPRESS-SESSION MIDDLEWARE
+app.use(session({
+    secret: "tothemoonmoonordoom", 
+    resave: false,
+    saveUninitialized: false
+}))
+
+//CONTROLLERS
+const usersController = require('./controllers/users.js');
+app.use('/users', usersController);
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
+
 
 // ROUTES
 
@@ -27,7 +41,7 @@ app.get('/coin/seed', (req, res)=>{
             "symbol": "BTC", 
             "info": "Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Although other cryptocurrencies have come before, Bitcoin is the first decentralized cryptocurrency - Its reputation has spawned copies and evolution in the space.", 
             "exchange": "https://www.coinbase.com/",
-            "notes": " ",
+            "notes": " "
         },
         {
             "coin": "Ethereum", 

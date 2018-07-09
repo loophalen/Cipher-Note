@@ -7,8 +7,6 @@
     <body>
         <h1>Edit Coin Info</h1>
 
-        <%=coin.coin; %>
-
         <form action="/coin/<%=coin.id%>?_method=PUT" method="POST">
             Coin: <input type="text" name="coin" value="<%=coin.coin%>" /><br/>
             Symbol: <input type="text" name="symbol" value="<%=coin.symbol%>" /><br/>
