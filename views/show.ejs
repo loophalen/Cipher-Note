@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width = device-width, initial-scale = 1">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <title></title>
+        <title>Cipher Note</title>
     </head>
     <body>
 
@@ -16,23 +16,39 @@
                 <h2><%= coin.coin %></h2>
                 <h3><%= coin.symbol %></h3>
                 <p>Info: <%= coin.info %></p>
-                Exchange: <%= coin.exchange %>
+                <p>Exchange: <%= coin.exchange %></p>
                 <p>Notes: <%= coin.notes %></p>
 
             </div>
-        
-        </div>
-        
-        <div class ="nav">
+
+        <div id="divWidgetAreaPrice" style="min-width:250px !important;"><script>var typeChart='price';
+                var w_baseCurrency = new Array(); var w_targetCurrency = new Array(); w_baseCurrency[0]="BTC"; w_targetCurrency[0]="USD"; var widgetStyle={};
+                widgetStyle["bgColor"]="transparent";
+                widgetStyle["backgroundColor"]="#FFFFFF";
+                widgetStyle["bgTransparent"]="transparent";
+                widgetStyle["fontSize"]="16px";
+                widgetStyle["fontFamily"]="arial";
+                widgetStyle["fontColor"]="#000000";
+                widgetStyle["borderWidth"]="1";
+                widgetStyle["borderColor"]="#CCCCCC";
+                widgetStyle["cornerStyle"]="none";
+                widgetStyle["lastUpdateTime"]="none";
+                widgetStyle["chartStyle"]="none";
+                </script><meta charset="UTF"><script src="https://bitcoinaverage.com/vendor/jquery/dist/jquery.min.js"></script><script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script><script src="https://bitcoinaverage.com/js/widgetGenerator/widgetUserScript.js"></script></div>
+
+    <div class ="nav">
+
+        <br>
         <!-- EDIT -->
         <a href="/coin/<%= coin.id; %>/edit">Edit</a>
+    </div>
 
          <!--  DELETE  -->
 			<form action="/coin/<%= coin.id; %>?_method=DELETE" method="POST" >
-                <input type="submit" value="DELETE"/>
-        </form>
-
-        <nav>
+                <input type="submit" class="btn btn-danger btn-sm" value="DELETE"/>
+            </form>
+        
+      <nav>
             <a href="/coin">Back to Coin Index</a>
 
         </nav>

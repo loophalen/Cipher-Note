@@ -5,7 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width = device-width, initial-scale = 1">
       <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      <title></title>
+      <title>Cipher Note</title>
    </head>
    <body>
       <!-- LOGIN WELCOME -->
@@ -18,13 +18,13 @@
          <% } %>
       </h1>
       
-      <div class="coin-index">
+      <div class="col-lg-2">
         <h2>Coin Index</h2>
         <% for(let i = 0; i < coin.length; i++){ %>
         <a href="/coin/<%=coin[i].id; %>"><%=coin[i].coin; %></a>
         <br>
         <% } %>
-    </div>
+    
 
     <br>
 
@@ -38,11 +38,11 @@
       <!-- LOGOUT -->
     <div class="logout">
       <% if(currentUser) { %>
-      <li>
+   
          <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" value="Logout"/>
+            <input type="submit" class="btn btn-warning btn-sm" value="Logout"/>
          </form>
-      </li>
+     
       <% } %>
         </div>
 

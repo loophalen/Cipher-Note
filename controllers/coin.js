@@ -20,15 +20,15 @@ router.get('/seed', (req, res)=>{
         {
             "coin": "Ethereum", 
             "symbol": "ETH", 
-            "info": " ", 
-            "exchange": " ",
+            "info": "Ethereum is a decentralized platform that runs smart contracts: applications that run exactly as programmed without any possibility of downtime, censorship, fraud or third party interference. In the Ethereum protocol and blockchain there is a price for each operation. ", 
+            "exchange": "https://www.coinbase.com/",
             "notes": " " 
         },
         {
             "coin": "Litecoin",
             "symbol": "LTC",
-            "info": " ", 
-            "exchange": " ",
+            "info": "Litecoin LTC - provides faster transaction confirmations (2.5 minutes on average) and uses a memory-hard, scrypt-based mining proof-of-work algorithm to target the regular computers and GPUs most people already have - which are its main differentials to Bitcoin. ", 
+            "exchange": "https://www.coinbase.com/", 
             "notes": " "  
         },
         {

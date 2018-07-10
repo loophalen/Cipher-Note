@@ -8,6 +8,9 @@
         <title></title>
     </head>
     <body>
+
+    <div class="col-lg-1">
+
         <h1>Edit Coin Info</h1>
 
         <form action="/coin/<%=coin.id%>?_method=PUT" method="POST">
@@ -16,13 +19,15 @@
             Info: <input type="text" name="info" value="<%=coin.info%>" /><br/>
             Exchange: <input type="text" name="exchange" value="<%=coin.exchange%>" /><br/>
             Notes: <input type="text" name="notes" value="<%=coin.notes%>" /><br/>
-            <input type="submit" name="" value="Edit Item"/>
+            <br>
+            <input type="submit" name="" class= "btn btn-success btn-sm" value="Edit Item"/>
         </form>
       
         <nav>
                 <a href="/coin">Back to Coin Index</a>
     
             </nav>
+        </div>
         
     </body>
 </html>
