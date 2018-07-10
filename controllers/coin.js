@@ -117,7 +117,6 @@ router.get('/', (req, res)=>{
 //SHOW ROUTE
 router.get('/:id', (req, res)=>{
     Coin.findById(req.params.id, (err, foundCoin)=>{
-        console.log(foundCoin)
         res.render('show.ejs', {
             currentUser: req.session.currentUser, 
             coin:foundCoin
@@ -133,6 +132,7 @@ router.get('/:id', (req, res)=>{
 //         .then((coinData) => {
 //           console.log(coinData);
 //           res.render('show.ejs', {
+//             currentUser: req.session.currentUser, 
 //             coin: foundCoin,
 //             coindData: coinData,
 //           });
