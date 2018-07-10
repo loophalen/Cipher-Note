@@ -119,26 +119,27 @@ router.get('/:id', (req, res)=>{
     Coin.findById(req.params.id, (err, foundCoin)=>{
         console.log(foundCoin)
         res.render('show.ejs', {
+            currentUser: req.session.currentUser, 
             coin:foundCoin
         });
     });
 });
 
 // //TESTING API ///
-// // router.get('/coin/:id', (req, res) => {
-// //     Coin.findById(req.someId, (err, foundCoin) => {
-// //       const url = `https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=${foundCoin.coinId}`;
-// //       axios.get(url)
-// //         .then((coinData) => {
-// //           console.log(coinData);
-// //           res.render('show.ejs', {
-// //             coin: foundCoin,
-// //             coindData: coinData,
-// //           });
-// //         }
-// //         );
-// //     });
-// //   });
+// router.get('/:id', (req, res) => {
+//     Coin.findById(req.someId, (err, foundCoin) => {
+//       const url = `https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=${foundCoin.coinId}`;
+//       axios.get(url)
+//         .then((coinData) => {
+//           console.log(coinData);
+//           res.render('show.ejs', {
+//             coin: foundCoin,
+//             coindData: coinData,
+//           });
+//         }
+//         );
+//     });
+//   });
 
 //DELETE ROUTE
 router.delete('/:id', (req, res)=>{

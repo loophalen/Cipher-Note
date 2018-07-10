@@ -40,18 +40,26 @@
 
         <br>
         <!-- EDIT -->
+    
+    <% if(currentUser) { %>
         <a href="/coin/<%= coin.id; %>/edit">Edit</a>
+      
+       
     </div>
 
          <!--  DELETE  -->
 			<form action="/coin/<%= coin.id; %>?_method=DELETE" method="POST" >
                 <input type="submit" class="btn btn-danger btn-sm" value="DELETE"/>
             </form>
+
+            <% } else { %>
         
-      <nav>
+        <nav>
             <a href="/coin">Back to Coin Index</a>
 
         </nav>
+
+        <%  } %>
     </div>
     </body>
 </html>
