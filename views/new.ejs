@@ -5,18 +5,31 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width = device-width, initial-scale = 1">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <title></title>
+        <title>Cipher Note</title>
     </head>
 <body>
+        
+    
+<div class="col-lg-1">
+
     <h1>Add a Coin</h1>
+
     <form action="/coin" method="POST">
         Coin: <input type="text" name="coin" /><br/>
         Symbol: <input type="text" name="symbol" /><br/>
         Info: <input type="text" name="info" /><br/>
         Exchange: <input type="text" name="exchange" /><br/>
         Notes: <input type="text" name="notes" /><br/>
-        <input type="submit" name="" value="Add Coin"/>
+        <br>
+        <input type="submit" name="" class= "btn btn-success btn-sm" value="Add Coin"/>
     </form>
+
+    <nav>
+            <a href="/coin">Back to Coin Index</a>
+
+        </nav>
+    
+</div>
     
 </body>
 </html>

@@ -18,6 +18,7 @@ router.delete('/', (req, res) => {
 
 //CREATE SESSION CREATE ROUTE
 router.post('/', (req, res) => {
+    console.log(req.body); 
     User.findOne({ username: req.body.username }, (err, foundUser)=>{
         if(bcrypt.compareSync(req.body.password, foundUser.password)){
             req.session.currentUser = foundUser;
