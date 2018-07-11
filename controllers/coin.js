@@ -154,11 +154,13 @@ router.get('/:id/edit', (req, res)=>{
         res.render(
             'edit.ejs',
             {
+                currentUser: req.session.currentUser, 
                 coin:foundCoin
             }
         );
     }); 
 }); 
+
 
 //UPDATE ROUTE - PUT
 router.put('/:id', (req, res)=> {

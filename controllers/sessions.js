@@ -14,7 +14,7 @@ router.delete('/', (req, res) => {
     req.session.destroy(()=>{
         res.redirect('/coin');
     });
-})
+}); 
 
 //CREATE SESSION CREATE ROUTE
 router.post('/', (req, res) => {
@@ -28,5 +28,7 @@ router.post('/', (req, res) => {
         }
     });
 });
+
+
 
 module.exports = router;
