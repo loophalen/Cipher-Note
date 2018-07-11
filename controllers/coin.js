@@ -34,49 +34,49 @@ router.get('/seed', (req, res)=>{
         {
             "coin": "Ripple",
             "symbol": "XRP",
-            "info": " ", 
+            "info": "Ripple positions itself as a complement to, rather than a competitor with, Bitcoin - the site has a page dedicated to Ripple for bitcoiners. Ripple is a distributed network which means transactions occur immediately across the network - and as it is peer to peer - the network is resilient to systemic risk.", 
             "exchange": " ",
             "notes": " " 
         }, 
         {
             "coin": "Bitcoin Cash", 
             "symbol": "BCH",
-            "info": " ", 
+            "info": "Bitcoin Cash (BCH) is a hard forked version of the original Bitcoin. It is similar to bitcoin with regards to its protocol; Proof of Work SHA-256 hashing, 21,000,000 supply, same block times and reward system.", 
             "exchange": " ",
             "notes": " "  
         },
         {
             "coin": "Ethereum Classic",
             "symbol": "ETC",
-            "info": " ", 
+            "info": "Ethereum Classic is an attempt at keeping the Ethereum blockchain unaltered by the part of the community that opposed the hard fork and the return of The DAO funds.", 
             "exchange": " ",
             "notes": " " 
         },
         {
             "coin": "Monero", 
             "symbol": "XMR",
-            "info": " ", 
+            "info": "Monero (XMR) is a cryptonight algorithm based alternative crypto currency. The coin is based on Proof of Work and has a block reward that varies smoothly. The difficulty retargets every block with a sixty second block target. ", 
             "exchange": " ",
             "notes": " "  
         },
         {
             "coin": "Stellar", 
             "symbol": "XLM",
-            "info": " ", 
+            "info": "Stellar is a technology that enables money to move directly between people, companies and financial institutions as easily as email. This means more access for individuals, lower costs for banks, and more revenue for businesses ", 
             "exchange": " ",
             "notes": " " 
         },
         {
             "coin": "Dash",
             "symbol": "DASH",
-            "info": " ", 
+            "info": "Dash (DASH) uses a new chained hashing algorithm approach, with many new scientific hashing algorithms for the proof-of-work. DASH aims to be the first privacy-centric cryptographic currency with fully encrypted transactions and anonymous block transactions ", 
             "exchange": " ",
             "notes": " " 
         },
         {
             "coin": "Decred", 
             "symbol": "DCR",
-            "info": " ", 
+            "info": "Decred is an open, progressive, and self-funding cryptocurrency with a system of community-based governance integrated into its blockchain. ", 
             "exchange": " ",
             "notes": " " 
         },

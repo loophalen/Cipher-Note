@@ -18,6 +18,7 @@
                 <p>Info: <%= coin.info %></p>
                 <p>Exchange: <a href = <%= coin.exchange %>><%=coin.exchange%></a></p>
                 <p>Notes: <%= coin.notes %></p>
+                
 
             </div>
 
@@ -52,12 +53,16 @@
                 <input type="submit" class="btn btn-danger btn-sm" value="DELETE"/>
             </form>
 
-            <% } else { %>
+   
         
         <nav>
             <a href="/coin">Back to Coin Index</a>
 
         </nav>
+
+     <% } else { %>
+
+        <a href="/coin">Back to Coin Index</a>
 
         <%  } %>
     </div>
